@@ -176,6 +176,14 @@ test_fserve_read_glyphs_LDFLAGS = -static
 test_fserve_read_glyphs_LDADD = libXfont2.la $(LTLIBOBJS)
 endif XFONT_FC
 
+if XFONT_FREETYPE
+TESTS += test-freetype-strike-index
+check_PROGRAMS += test-freetype-strike-index
+
+test_freetype_strike_index_SOURCES = test/test-freetype-strike-index.c $(TEST_UTIL_SRCS)
+test_freetype_strike_index_LDADD = libXfont2.la $(LTLIBOBJS)
+endif XFONT_FREETYPE
+
 # PCF parser security regression tests
 if HAVE_PYTHON
 TESTS += test-pcf-repad test-pcf-props test-pcf-bitmapscale \
@@ -256,6 +264,10 @@ EXTRA_DIST += test/gen_evil_pcf_repad.py		\
 	      test/gen_evil_pcf_encoding.py	\
 	      test/gen_evil_pcf_norepad.py	\
 	      test/gen_evil_pcf_negskip.py
+
+EXTRA_DIST += test/data/ft-strike-index/strike-test.bdf	\
+	      test/data/ft-strike-index/strike-test.pfb	\
+	      test/data/ft-strike-index/fonts.dir
 
 
 MAINTAINERCLEANFILES = ChangeLog INSTALL
