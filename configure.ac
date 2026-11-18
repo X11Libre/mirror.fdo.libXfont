@@ -21,7 +21,7 @@
 
 # Initialize Autoconf
 AC_PREREQ([2.70])
-AC_INIT([libXfont2], [2.0.9],
+AC_INIT([libXfont2], [2.0.10],
 	[https://gitlab.freedesktop.org/xorg/lib/libxfont/-/issues], [libXfont2])
 AC_CONFIG_SRCDIR([Makefile.am])
 AC_CONFIG_HEADERS([config.h])
